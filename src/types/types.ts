@@ -12,3 +12,13 @@ export interface CreateNoteParams {
   content: string;
   tag: string;
 }
+
+export interface NotesResponse {
+  notes: Note[];
+  totalPages: number;
+}
+
+export interface FetchFuncParams {
+  page: number;
+  topic: string;
+}

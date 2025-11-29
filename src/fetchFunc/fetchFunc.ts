@@ -1,18 +1,8 @@
 import axios from "axios";
 const API_KEY = import.meta.env.VITE_API_KEY;
+import type { CreateNoteParams, FetchFuncParams, NotesResponse } from "../types/types";
 
-import type { Note } from "../types/types";
-import type { CreateNoteParams } from "../types/types";
 
-interface NotesResponse {
-  notes: Note[];
-  totalPages: number;
-}
-
-interface FetchFuncParams {
-  page: number;
-  topic: string;
-}
 
 export const deleteFunc = async (id: string) => {
   const response = await axios.delete(`https://notehub-public.goit.study/api/notes/${id}`, {
